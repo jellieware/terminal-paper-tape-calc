@@ -5,7 +5,7 @@ A paper tape calculator for the terminal
 Usage example:
 <br>
 <br>
-Add 500: +500
+Add 500: +500<br>
 Delete ID # 3: d3
 <br>
 <br>
