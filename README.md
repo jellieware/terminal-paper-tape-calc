@@ -6,7 +6,10 @@ Usage example:
 <br>
 <br>
 Add 500: +500<br>
-Delete ID # 3: d3
+Delete ID # 3: d3<br>
+5%: p5<br>
+-5%: m5<br>
+exit: x
 <br>
 <br>
 TODO:
