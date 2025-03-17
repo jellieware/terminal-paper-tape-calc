@@ -9,7 +9,7 @@ Add 500: +500<br>
 Delete ID # 3: d3<br>
 5%: p5<br>
 -5%: m5<br>
-exit: x
+Exit: x
 <br>
 <br>
 TODO:
