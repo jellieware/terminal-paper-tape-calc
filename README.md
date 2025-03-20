@@ -4,7 +4,7 @@ A paper tape calculator for the terminal with 2 decimal precision
 Please dont forget to install:<br>
 <br>
 "apt-get install bc"
-<br>
+<br><br>
 Usage example:
 <br>
 <br>
