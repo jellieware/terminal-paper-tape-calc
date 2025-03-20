@@ -1,6 +1,7 @@
 # terminal-paper-tape-calc
-
-
+<br><br>
+![1000016620](https://github.com/user-attachments/assets/82641cfe-ece5-400e-a6cd-532969894318)
+<br><br>
 A paper tape calculator for the terminal with 2 decimal precision
 <br><br>
 Please dont forget to install:<br>
