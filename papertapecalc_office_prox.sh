@@ -104,7 +104,7 @@ if [ $entries -gt 0 ];then
 
 
 
-if [[ "${signArrX[i]}" != "p" ]] && [[ "${signArrX[i]}" != "m" ]] && [[ "${signArrX[i]}" != "d" ]];then
+if [[ "${signArrX[i]}" != "p" ]] && [[ "${signArrX[i]}" != "m" ]];then
 absArr[$entries]=$(printf "%.2f" $(echo "${absArr[prev]} ${signArrX[i]} $actual_num" | bc))
 fi
 
@@ -121,15 +121,6 @@ if [[ "${signArrX[i]}" == "m" ]] ;then
 
 
 absArr[$entries]=$(printf "%.2f" $(echo "${absArr[prev]} - (${absArr[prev]} * $actual_num / 100)" | bc))
-
-fi
-
-
-if [[ "${signArrX[i]}" == "d" ]] ;then
-
-
-absArr[$entries]=$(printf "%.2f" $(echo "${absArr[prev]} / $actual_num" | bc))
-
 
 fi
 
@@ -158,7 +149,7 @@ fi
 if [ $entries -gt 0 ];then
 
 
-if [ "$first_char" != "p" ] && [ "$first_char" != "m" ] && [ "$first_char" != "e" ] && [ "$first_char" != "d" ];then
+if [ "$first_char" != "p" ] && [ "$first_char" != "m" ] && [ "$first_char" != "e" ];then
 
 norm=$(printf "%.2f" $(echo "${absArr[prev]} $1 $actual_num" | bc))
 absArr[$entries]=$norm
@@ -181,14 +172,6 @@ absArr[$entries]=$(printf "%.2f" $(echo "${absArr[prev]} - (${absArr[prev]} * $a
 
 fi
 
-if [ "$first_char" == "d" ] ;then
-
-
-divideit=$(printf "%.2f" $(echo "${absArr[prev]} / $actual_num" | bc))
-absArr[$entries]=$divideit
-
-
-fi
 
 
 fi
@@ -236,7 +219,7 @@ done
 }
 
 
-if [ "$first_char" == "$plus" ] || [ "$first_char" == "$minus" ] || [ "$first_char" == "d" ] || [ "$first_char" == "$mult" ] || [ "$first_char" == "p" ] || [ "$first_char" == "m" ] || [ "$first_char" == "f" ] || [ "$first_char" == "c" ];then
+if [ "$first_char" == "$plus" ] || [ "$first_char" == "$minus" ] || [ "$first_char" == "/" ] || [ "$first_char" == "$mult" ] || [ "$first_char" == "p" ] || [ "$first_char" == "m" ] || [ "$first_char" == "f" ] || [ "$first_char" == "c" ];then
 
 
 
@@ -253,8 +236,8 @@ if [ "$first_char" == "*" ] && [[ "$calcinputonly"  =~ ^-?[0-9.]+$ ]];then
 calcnorm "*"
 fi
 
-if [ "$first_char" == "d" ] && [[ "$calcinputonly"  =~ ^-?[0-9.]+$ ]];then
-calcnorm "d"
+if [ "$first_char" == "/" ] && [[ "$calcinputonly"  =~ ^-?[0-9.]+$ ]];then
+calcnorm "/"
 fi
 
 
