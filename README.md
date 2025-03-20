@@ -1,6 +1,6 @@
 # terminal-paper-tape-calc
 A paper tape calculator for the terminal with 2 decimal precision
-<br>
+<br><br>
 Please dont forget to install:<br>
 <br>
 "apt-get install bc"
