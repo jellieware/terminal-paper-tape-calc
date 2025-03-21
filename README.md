@@ -12,7 +12,7 @@ Usage example:
 <br>
 <br>
 Add 500: "+500"<br>
-Add 0.25: "+0.25"<br>
+Add 0.25: "+0.25" or "+.25"<br>
 Divide by 6: "/6"<br>
 Subtract by 700: "-700"<br>
 Multiply by 4: "*4"<br>
