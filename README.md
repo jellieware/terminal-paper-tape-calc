@@ -17,7 +17,7 @@ Add 0.25: "+0.25" or "+.25"<br>
 Divide by 6: "/6"<br>
 Subtract by 700: "-700"<br>
 Multiply by 4: "*4"<br>
-Delete ID # 3: "e3"<br>
+Erase ID # 3: "e3"<br>
 5%: "p5"<br>
 -5%: "m5"<br>
 Print to file: "f"<br>
