@@ -26,9 +26,11 @@ delmode=0
 subtotalArrX=()
 signArrX=()
 while true;do
-
-
-
+date=$(date +"%F")
+echo ""
+echo ""
+echo -e "\r\rPaper Tape Calculator Pro. Date:$date"
+echo "Enter input: "
 read calcInput
 first_char="${calcInput:0:1}"
 calcinputonly="${calcInput:1}"
@@ -58,8 +60,8 @@ clear
 }
 
 function printtofile {
-date=$(date +"%F-%H-%M-$S")
-echo "Printed contents to file"
+date=$(date +"%F-%H-%M-%S")
+echo "Printed contents o file"
 print
 echo $(print) > "papertape_$date.txt"
 
@@ -259,8 +261,9 @@ fi
 
 
 else
-echo "Try Again!"
+printf "\rWrong Input?\r"
 fi
 
 
 done
+
