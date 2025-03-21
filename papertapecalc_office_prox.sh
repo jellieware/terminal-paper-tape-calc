@@ -61,9 +61,11 @@ clear
 
 function printtofile {
 date=$(date +"%F-%H-%M-%S")
-echo "Printed contents o file"
-print
-echo $(print) > "papertape_$date.txt"
+echo -e "Printed contents to file\r\r"
+echo ""
+
+printx
+echo $(printx) > "papertape_$date.txt"
 
 }
 
@@ -134,7 +136,7 @@ signArr[$entries]=${signArrX[i]}
 
 ((entries++))
 done
-print
+printx
 }
 
 function calcnorm {
@@ -181,10 +183,10 @@ fi
 signArr[$entries]="$1"
 
 ((entries++))
-print
+printx
 }
 
-function print {
+function printx {
 for (( i=0; i < $entries; i++ ));do
 
 
@@ -261,7 +263,7 @@ fi
 
 
 else
-printf "\rWrong Input?\r"
+echo -e "\rWrong Input?\r\r"
 fi
 
 
