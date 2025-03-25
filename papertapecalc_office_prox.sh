@@ -65,7 +65,7 @@ echo -e "Printed contents to file\r\r"
 echo ""
 
 printx
-echo $(printx) > "papertape_$date.txt"
+echo -e $(printx) > "papertape_$date.txt"
 
 }
 
@@ -109,14 +109,14 @@ if [ $entries -gt 0 ];then
 
 
 if [[ "${signArrX[i]}" != "p" ]] && [[ "${signArrX[i]}" != "m" ]];then
-absArr[$entries]=$(printf "%.2f" $(echo "${absArr[prev]} ${signArrX[i]} $actual_num" | bc))
+absArr[$entries]=$(printf "%.2f" $(echo "scale=2; ${absArr[prev]} ${signArrX[i]} $actual_num" | bc))
 fi
 
 
 if [[ "${signArrX[i]}" == "p" ]] ;then
 
 
-absArr[$entries]=$(printf "%.2f" $(echo "${absArr[prev]} + (${absArr[prev]} * $actual_num / 100)" | bc))
+absArr[$entries]=$(printf "%.2f" $(echo "scale=2; ${absArr[prev]} + (${absArr[prev]} * $actual_num / 100)" | bc))
 
 fi
 
@@ -124,7 +124,7 @@ fi
 if [[ "${signArrX[i]}" == "m" ]] ;then
 
 
-absArr[$entries]=$(printf "%.2f" $(echo "${absArr[prev]} - (${absArr[prev]} * $actual_num / 100)" | bc))
+absArr[$entries]=$(printf "%.2f" $(echo "scale=2; ${absArr[prev]} - (${absArr[prev]} * $actual_num / 100)" | bc))
 
 fi
 
@@ -155,7 +155,7 @@ if [ $entries -gt 0 ];then
 
 if [ "$first_char" != "p" ] && [ "$first_char" != "m" ] && [ "$first_char" != "e" ];then
 
-norm=$(printf "%.2f" $(echo "${absArr[prev]} $1 $actual_num" | bc))
+norm=$(printf "%.2f" $(echo "scale=2; ${absArr[prev]} $1 $actual_num" | bc))
 absArr[$entries]=$norm
 
 fi
@@ -164,7 +164,7 @@ if [ "$first_char" == "p" ] ;then
 
 
 
-absArr[$entries]=$(printf "%.2f" $(echo " ${absArr[prev]} + (${absArr[prev]} * $actual_num / 100)" | bc))
+absArr[$entries]=$(printf "%.2f" $(echo "scale=2;  ${absArr[prev]} + (${absArr[prev]} * $actual_num / 100)" | bc))
 
 fi
 
@@ -172,7 +172,7 @@ fi
 if [ "$first_char" == "m" ] ;then
 
 
-absArr[$entries]=$(printf "%.2f" $(echo "${absArr[prev]} - (${absArr[prev]} * $actual_num / 100)" | bc))
+absArr[$entries]=$(printf "%.2f" $(echo "scale=2; ${absArr[prev]} - (${absArr[prev]} * $actual_num / 100)" | bc))
 
 fi
 
