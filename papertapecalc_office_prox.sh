@@ -101,8 +101,13 @@ subtotalArr[$entries]=$actual_num
 prev=$(( entries - 1 ))
 
 
-if [  $entries == 0 ];then
-absArr[$entries]=$actual_num
+if [ $entries == 0 ];then
+
+
+if [[ "${signArrX[i]}" != "p" ]] && [[ "${signArrX[i]}" != "m" ]];then
+absArr[$entries]=$(printf "%.2f" $(echo "scale=2; 0 ${signArrX[i]} $actual_num" | bc))
+
+fi
 fi
 if [ $entries -gt 0 ];then
 
@@ -147,7 +152,7 @@ prev=$(( entries - 1 ))
 
 
 if [  $entries == 0 ];then
-absArr[$entries]=$actual_num
+absArr[$entries]=$(printf "%.2f" $(echo "scale=2; 0 $1 $actual_num" | bc))
 fi
 
 if [ $entries -gt 0 ];then
